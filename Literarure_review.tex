@@ -57,7 +57,7 @@
 \subtitle{Week 33}
 %\subcaption
 %\author{PP}
-\date{Updated: \today\\Version 1.0}
+\date{Updated: \today\\Version 1.x}
 
 
 
@@ -83,13 +83,13 @@
 			%	\subitem LVDC distribution converters function and requirements
 			\item Literature review
 			\subitem Introduction
-			\subitem Mega-trends pulling the technology development
-			\subitem Microgrids research
-			\subitem Revenge of the Sith 
-			\subitem Vision of Future Power Distribution
-			\subitem Power Electronics Trends
+			\subitem Megatrends
+			\subitem Microgrids
+			\subitem Low Voltage DC Distribution 
+			\subitem Power Electronics
 			\subitem Product Architecture
-			\subitem Modularity in Future Power Distribution
+			\subitem Modular Converter
+			\subitem Modularity in Low Voltage DC Distribution
 			\subitem Conclusion 
 		\end{enumerate}
 		\item \textbf{Notes:}
@@ -101,32 +101,37 @@
 
 \section{Introduction}
 
-This chapter summarizes some aspects of the ongoing debate about the future of the electrical power distribution and the role of the power electronic devices in it. The goal of this chapter is to help to understand what is low voltage DC distribution and what is the role of power electronic devices in it. 
-
-This summary of the state of the research in the area is a corner stone for a future research on the components of the low voltage DC distribution. 
-
+This document summarizes some aspects of the ongoing debate about the future of the electrical power distribution and the role of the power electronic devices in it. The goal of this document is to help to understand what are the main motivations behind this debate, what is low voltage DC distribution and what is the role of power electronic devices in this vision. Based on this discussion a "big picture" should arise, on which goals and research objectives can be established.  
 
 %The prediction of the future development of any field is always unreliable, since it relies heavily on extrapolation of the current trends \cite{Wyk2012}. Therefore describing hypothetical application is at least tricky. Luckily we have some small scale real world examples which can be used as a starting point ? 
 
 Royal Geographical Society of the United Kingdom is running a programme of discussions and accompanying resources called \href{<https://21stcenturychallenges.org/discover/>}{21st Century Challenges}. The aim of the program is to inform about and promote the challenges the UK is facing. However, upon quick scan of these challenges, one must realize, that they are of rather global nature. Almost random examples are: Low carbon energy, Climate change, Sustainability, Manufacturing, Economic growth, Energy-water-food stress nexus, Urbanisation, Energy for development\footnote{Source:https://21stcenturychallenges.org/discover/}.
 
-It is evident from almost randomly chosen challenges,that all are in one way or the other connected to the problem of generation and distribution of electrical energy.  To illustrate the importance of the electrical energy to the economic growth we can compare the total of global electricity consumption in 2000, which was 15,400 TWh, to a projection of total electricity consumption in 2020 of 27,000 TWh\cite{Garrity2009}. These projections were made based on the steep rise of energy usage in European Union after 2000. However, the reality is somewhat different and we can see a decrease in the energy use in Fig. \ref{fig:europeelectricitycon}. 
+It is evident from almost randomly chosen challenges,that all are in one way or the other connected to the problem of generation and distribution of electrical energy.  The electrical energy became an integral part of peoples lives in the developed world, and it is believed to be one of the keys to improve living standards in the developing world. 
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=1\linewidth]{../week29/Pictures/EuropeElectricityCon}
-	\caption{Electric power consumption measures the production of power plants and combined heat and power plants less transmission, distribution, and transformation losses and own use by heat and power plants.Source:}
-	\label{fig:europeelectricitycon}
-\end{figure}
-\newpage
+This document is organized as a base for roadmap. The first section describes the megatrends which are forcing the research topics forward. The third section describes a general research area which gave birth to a vision of low voltage DC distribution which is described in the fourth section. The research should be constraint on the component level in this vision, therefore the fifth vision is dedicated to a general description of power electronics, the internal trends of the field, and its role in the vision of low voltage DC distribution. The sixth section is dedicated  to product architecture and discussion of modular design, and modular products. In the seventh section modular converter is described, and overview of the research in the area is given. In the eight section a modular converter for low voltage DC distribution is described, with some advantages  of the solutions mentioned. The document ends with conclusion where some research topics are proposed.
 
-It cannot be concluded whether the decrease in the use of the electrical energy is due to economic situation or simply because more efficient electrical solutions are being used. Considering the fact that the overal trend over past 60 years was increasing and there always were few dips in the energy use for couple of years this might be the case. Thus this short term dip should not comfort us too much.
+The fact is that this literature review covers several different topics. Therefore the topics are not described in great detail. However, thanks to this general approach several research topics were selected, which are treated in more detail in a follow up document - Phd Agreement.
+
+%To illustrate the importance of the electrical energy to the economic growth we can compare the total of global electricity consumption in 2000, which was 15,400 TWh, to a projection of total electricity consumption in 2020 of 27,000 TWh\cite{Garrity2009}. These projections were made based on the steep rise of energy usage in European Union after 2000. However, the reality is somewhat different and we can see a decrease in the energy use in Fig. \ref{fig:europeelectricitycon}. 
+%
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=1\linewidth]{../week29/Pictures/EuropeElectricityCon}
+%	\caption{Electric power consumption measures the production of power plants and combined heat and power plants less transmission, distribution, and transformation losses and own use by heat and power plants.Source:}
+%	\label{fig:europeelectricitycon}
+%\end{figure}
+%\newpage
+%
+%It cannot be concluded whether the decrease in the use of the electrical energy is due to economic situation or simply because more efficient electrical solutions are being used. Considering the fact that the overal trend over past 60 years was increasing and there always were few dips in the energy use for couple of years this might be the case. Thus this short term dip should not comfort us too much.
  
 
 
 %%%
 \newpage
-\section{Mega-trends pulling the technology development}
+\newpage
+
+\section{Megatrends pulling the technology development}
 
 The megatrends are large, transformative global forces that define the future by having a far-reaching impact on business, economies, industries,societies and individuals\cite{EY2015}. In this report we are particularly interested in those megatrends that have more or less direct impact on the development of the electrical power distribution system. The main trends that can be identified are growing penetration of renewable energy sources, growing urbanization and decarbonizing the economy. 
 
@@ -139,7 +144,7 @@ Producing the electrical energy and not compromise the prospects of the future g
 	\caption{Electricity production from renewable sources, excluding hydroelectric, includes geothermal, solar, tides, wind, biomass, and biofuels.}
 	\label{fig:europerenewables}
 \end{figure}
-\newpage
+%\newpage
 
 
 With higher penetration of renewable energy sources new challenges arise for the power distribution systems. The power systems for electricity distribution were designed to for a situation with strictly defined power flow, and centralized power production.  It has been discussed that high penetration of distributed energy sources can lead to overloading of the power distribution systems\cite{Garrity2009}.
@@ -148,7 +153,7 @@ Therefore, in order to utilize more of the renewable energy sources the power di
 
 Naturally, the energy storage can smooth out the peaks in power production and consumption\cite{Luo2015}, but it does not influence the reached conclusion about the flexibility of the network. Rather on the other hand, it is already clear that when multiple car chargers are connected, several problems can occur to the grid\cite{Zhou2015}. 
 
-The growing urbanization creates further challenges for the society \cite{Pulse2015}. These challenges are for most part rather unknown to the society.  Simply because in 1950 there were only two urban centers with more than 10 million inhabitants in 2015 there were 29 and in 2030 there will be 41\cite{Pulse2015}. To have a better grasp of these numbers, in 2015 more than 50\% of the popullation lived in the cities, by the 2030 it will be around 75 \% \cite{Pulse2015}. The aglomartions in China will soon hit the milestone of 50 million inhabitants.  
+The growing urbanization creates further challenges for the society \cite{Pulse2015}. These challenges are for most part rather unknown to the academia and society.  Simply because in 1950 there were only two urban centers with more than 10 million inhabitants in 2015 there were 29 and in 2030 there will be 41\cite{Pulse2015}. To have a better grasp of these numbers, in 2015 more than 50\% of the popullation lived in the cities, by the 2030 it will be around 75 \% \cite{Pulse2015}. The aglomartions in China will soon hit the milestone of 50 million inhabitants.  
 
 
 
@@ -162,9 +167,9 @@ The growing number of inhabitants in small area means higher concentration of lo
 \label{fig:co2}
 \end{figure}
 
-\newpage
+%\newpage
 
-These trends clearly represent a strong pull for the technology innovation. The future distribution grid is going to work in completely different environment and different context. Thus it is obvious that the time is ripe to rethink the toplevel architecture of the power distribution. The product design for the near future power distribution grid will need to be very compact, scalable, with small footprint\cite{Garrity2009} which will allow bi-directional flow of power and storage of energy.
+These trends clearly represent a strong pull for the technology innovation. The future distribution grid is going to work in completely different environment and different context. Thus it is obvious that the time is ripe to rethink the toplevel architecture of the power distribution. The product design for the near future power distribution grid will need to be very compact, scalable and with small footprint\cite{Garrity2009} which will allow bi-directional flow of power and storage of energy.
 
 
 
@@ -201,18 +206,22 @@ The research in microgrid and the fact that the microgrids are decoupled from th
 	\item demand-response operation and pricing
 \end{itemize}
 
-However, there can be some advanteges of the DC solution like no reactive power, or in some cases lower number of conversion steps.  The next subsection will discuss these.
-
+However, there can be some advantages of the DC solution like no reactive power, or in some cases lower number of conversion steps.  The next subsection will discuss these.
+\newpage
 \subsection{Why DC ? }
-There are several reasons why people think that DC grid might be more advantageous than the AC. One of the first reasons that comes to mind is system efficiency. In \cite{Engelen2006a}  the authors investigated the feasibility of the DC system for a household. The results show that the efficiency of the system is higher due to lower efficiencies of the converters. Similar comparison was done 6 years later in \cite{Paper2012} where the authors compared the DC and AC system for the data centers. The study concludes that the efficiency gain is around 1 \%. Yet, it is interesting to compare the quantified results of \cite{Paper2012} with for example \cite{Mondal2012}. In \cite{Mondal2012} the higher efficiency of the proposed DC solution is claimed however not quantified. 
+
+There are several reasons why people think that DC grid might be more advantageous than the AC for lowe voltage power distribution. First of all, there is an example of HVDC, where DC proved to be much better for transport of the bulk power. The reason for the success of HVDC is the fact that with the increasing distance the requirements for the protection does not rise as for AC\cite{Garrity2009}. However, for LV distribution we rarely speak about long distances, thus it is good to investigate the reasoning behind introduction of DC.
+
+ One of the first reasons that comes to mind is system efficiency. In 2006 authors of \cite{Engelen2006a}  investigated the feasibility of the DC system for a household. The results show that the efficiency of the DC system is lower due to lower efficiencies of the converters. Similar comparison was done 6 years later in \cite{Paper2012} where the authors compared the DC and AC system for the data centers. The study concludes that the efficiency gain is around 1 \%. Yet, it is interesting to compare the quantified results of \cite{Paper2012} with for example \cite{Mondal2012}. In \cite{Mondal2012} the higher efficiency of the proposed DC solution is claimed however not quantified.  However, it has to be mentioned that authors of the \cite{Paper2012} were criticised for not involving the best available DC-DC converters in their calculations.
 
 The other argument is cost-effectiveness of the DC. ABB has constructed 380 $V_{dc}$ data center in \href{<http://www.abb.com/cawp/seitp202/187b2f29acaea090c1257a0e0029fb1a.aspx>}{Zurich}\footnote{http://www.abb.com/cawp/seitp202/187b2f29acaea090c1257a0e0029fb1a.aspx} in 2012. Performance tests showed that the new power distribution system is 10 percent more efficient than for comparable alternating current (AC) technology. In addition, investment costs for the system were 15 percent lower than for an AC system.
+%\newpage
 
-Some researchers make a step higher, and propose to switch even medium voltage(MV) transmission to DC, for example \cite{Doncker2014}. The main motivation is topology and multi-directional power flow. However, there are also researchers that bring into question the losses in AC transmission \cite{Dragicevic2015},\cite{Dragicevic2014}. Thus it is interesting to investigate \ref{fig:EuropeTransmission} from \href{<http://www.indexmundi.com/facts/indicators/EG.ELC.LOSS.ZS>}{IndexMundi}\footnote{IndexMundi contains detailed country statistics, charts, and maps compiled from multiple sources.}\footnote{http://www.indexmundi.com/facts/indicators/EG.ELC.LOSS.ZS}. As is clear from the figure, the losses are decreasing, and from previous discussion it might be concluded, that proving the efficiency might be tricky.
+Some researchers make a step higher, and propose to switch even the medium voltage(MV) transmission to DC, for example \cite{Doncker2014}. The main motivation is topology and multi-directional power flow. However, there are also researchers that bring into question the losses in AC transmission \cite{Dragicevic2015},\cite{Dragicevic2014}. Thus it is interesting to investigate Fig. \ref{fig:EuropeTransmission} from \href{<http://www.indexmundi.com/facts/indicators/EG.ELC.LOSS.ZS>}{IndexMundi}\footnote{IndexMundi contains detailed country statistics, charts, and maps compiled from multiple sources.}\footnote{http://www.indexmundi.com/facts/indicators/EG.ELC.LOSS.ZS}. As is clear from the figure, the losses are decreasing, and from previous discussion it might be concluded, that proving the efficiency gain might be tricky.
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=\linewidth]{Pictures/EuropeTransmission}
+	\includegraphics[width=.9\linewidth]{Pictures/EuropeTransmission}
 	\caption{Electric power transmission and distribution losses include losses in transmission between sources of supply and points of distribution and in the distribution to consumers, including pilferage.}
 	\label{fig:EuropeTransmission}
 \end{figure}
@@ -235,7 +244,7 @@ Yet in Finland the DSO are considering of refurbishing the MVAC grid to LVDC gri
 
 
 %\subsubsection{What makes the DC advantageous?}
-
+\textbf{Conclusion} \\
 There are some general advantages of the DC distribution which are transportable\cite{Jovcic2014} :
 \begin{itemize}
 	\item smaller cable size for given power level
@@ -310,7 +319,7 @@ system(s). A microgrid’s equivalent in today' ac distribution system would be 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\linewidth]{Pictures/NilsMicro}
+\includegraphics[height=.4\textheight]{Pictures/NilsMicro}
 \caption{Microgrid. Source: the same}
 \label{fig:nilsmicro}
 \end{figure}
@@ -319,18 +328,20 @@ Finally when we connect the microgrids together, we arrive to a meshed low volta
 This macrogrid is an interconnection of microgrids and the integration of the MV and HV grids\footnote{The MV and HV grids are not depicted in this picture.}.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=.8\linewidth]{Pictures/NIlsMeshed}
+\includegraphics[height=.4\textheight]{Pictures/NIlsMeshed}
 \caption{Macrogrid. Source:Nils.}
 \label{fig:nilsmeshed}
 \end{figure}
 
 
-
 \newpage
+\newpage
+
 \section{Power Electronics}
 
 
-Power electronics always is a multidisciplinary field \cite{Technology2015}. The multidisciplinarity of the field comes simply from the various functions the converter must provide. One of the possible representations of the fundamental functions of power converter can be found in \cite{Wyk2012} or in \cite{VanWyk2013}: 
+Power electronics always has been a multidisciplinary field \cite{Technology2015}. The multidisciplinarity of the field comes simply from the various fundamental functions that the converter must provide. One of the possible representations of the fundamental functions of power converter can be found in \cite{Wyk2012} or in \cite{VanWyk2013}: 
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.7\linewidth]{Pictures/vanWyka}
@@ -340,9 +351,9 @@ Power electronics always is a multidisciplinary field \cite{Technology2015}. The
 
 %The fundamental functions from Fig. \ref{fig:vanwyka}, can be easily matched with different research fields. Let's take the \emph{switching function} as an example. The switching function control electromagnetic energy flow/average power \cite{Ferreira2001}. This function is physically implemented via semiconductor device. This device needs to manufactured, and appropriately confined from the surrounding environment. The one fundamental function of the power converter can be readily matched with multiple research fields.
 
-The multidisciplinarity of the field is one of the main hurdles to comprise a solid and in the same time general literature review. This section will provide some general aspects of how the field is defined now, and what are the current research trends in multiple areas. As it will be clear the "contex is the king" for the research in the power electronics, a significant space will be dedicated to the vision of LVDC distribution. However, since the application is more hypothetical than real, the challenges and opportunities are rather shaping the reality, than being shaped by it. 
+The multidisciplinarity of the field is one of the main hurdles to comprise a solid and in the same time general literature review. This section will provide some general aspects of how the field is defined now, and what are the current research trends in some of the comprising areas. As it will be clear the "contex is the king" for the research in the power electronics.  However, since the application is more hypothetical than real, the challenges and opportunities are rather shaping the reality, than being shaped by it\footnote{Limiting the scope of the applicability ?}. 
 
-In \ref{fig:vanwyka} the fundamental functions of the power electronics converter are shown. However, such definition can be too flat, and we need to add more dimensions or other aspects for defining a converter. As is explained for example in \cite{Ferreira2001}, it is no longer sufficient to describe a converter just by using circuit theory. One needs also the component models, be it thermal, electromagnetic or spatial to describe the converter. This is because for definition of a converter the technologies utilized are vital. 
+In \ref{fig:vanwyka} the fundamental functions of the power electronics converter are shown. However, such description of the converter can be too flat, and we need to add more dimensions to have better understanding. As is explained for example in \cite{Ferreira2001}, it is no longer sufficient to describe a converter just by using circuit theory. One needs also the component models, be it thermal, electromagnetic or spatial to describe the converter. This is because for description of a converter  also the technologies used are vital. 
 
 \begin{figure}[h!]
 \centering
@@ -352,11 +363,11 @@ In \ref{fig:vanwyka} the fundamental functions of the power electronics converte
 \end{figure}
 
 
-There are several technologies shown in the Fig. \ref{fig:vanwyk2}. In the further text it will be shown, that these technologies can related to research areas, where some have higher incentives for research and some has much lower. 
+There are several technologies shown in the Fig. \ref{fig:vanwyk2}. In the further text it will be shown, that these technologies can be related to research areas, out of which some have higher incentives for research and some has somewhat lower. 
 
-In Fig. \ref{fig:vanwyk2} there are some relationship between the technologies sketched. These relationships however, can be sketched in different ways. The relationship between the technologies, can be dependent on the application, but mainly on the design process. There is a great deal of subjectivity in how these relationships are usually drawn. And it can be argued that these subjectivity comes from the design process. 
+In Fig. \ref{fig:vanwyk2} there are some relationship between the technologies sketched. These relationships however, can be sketched in different ways. The relationship between the technologies, can be dependent on the application, but mainly on the design process. There is a great deal of subjectivity in how these relationships can be drawn. And it can be argued that these subjectivity comes from the design process. 
 
-A very classical, perhaps somewhat outdated design approach can be found in Fig. \ref{fig:jelena2}. This division of the design process is very easy to understand, but mainly very illustrative. It clearly distinguishes between two section of design. First is the electrical design, which today is mostly done in simulation and without almost any need for prototyping, thanks to good simulation tools. The second part is  connected to the actual fabricating of the product where the story is completely different.
+An example of very classical, and somewhat outdated design approach can be found in Fig. \ref{fig:jelena2}. This division of the design process is very easy to understand, but mainly very illustrative. It clearly distinguishes between two section of design. First is the electrical design, which today is mostly done in simulation and without almost any need for prototyping. The second part is  connected to the actual fabrication of the product where the story is completely different.
 
 \begin{figure}[h!]
 	\centering
@@ -365,9 +376,9 @@ A very classical, perhaps somewhat outdated design approach can be found in Fig.
 	\label{fig:jelena2}
 \end{figure}
 
-In the manufacturing process there is still a strong need for prototyping. Furthermore, many design engineers are not aware of the manufacturing limitations and technology. This unfortunate state of affairs also projects in education. Where a great emphasizes is laid on electrical design, and almost none on the manufacturing and technology. This trend is unhealthy because of several reasons. First of all, the enviromental impact and cost, the two most important factors, can be mainly influenced in this process. And second as will be shown later in this text, there are not many research challenges in the first part of the diagram despite the flood of papers on topologies, new snubbers, soft-switching ... 
+In the manufacturing process there is still a strong need for prototyping. Furthermore, many design engineers are not aware of the manufacturing limitations and technology. This unfortunate state of affairs also projects in education. Where a great emphasizes is laid on electrical design, and almost none on the manufacturing and technology. This trend is unhealthy because of several reasons. First of all, the environmental impact and cost, the two most important factors, can be mainly influenced in this process. And second as will be shown later in this text, there are not many research challenges in the first part of the diagram despite the flood of papers on topologies, new snubbers, soft-switching ... 
 
-In \cite{Pavlovsky2006},\cite{Popovic2005} and \cite{Gerber2005} a very thorough discussion on the design process of the converter can be found. In each work the goal was to improve the efficiency and manily power density. The results were superior to the market equivalents, mainly due to implemententaion of very integral design process. What is interesting in this part of the text is to compare the various relationships between technologies of the converter in each work. On first sight it seem that in \cite{Pavlovsky2006} the emphasizes was laid upon the electrical design. In \cite{Popovic2005}, the emphasizes was laid on the second part of the diagram in Fig. \ref{fig:jelena2}. And in \cite{Gerber2005} the empahsizes was laid more on combination of the two, with definining more consituent relationships.  This small note will be important later, when comparing modular and integral approach for product design.
+In \cite{Pavlovsky2006},\cite{Popovic2005} and \cite{Gerber2005} a very thorough discussion on the design process of the converter can be found. In each work the goal was to improve the efficiency and mainly power density. The results were superior to the market equivalents, mainly due to implementation of very integral design process. What is interesting in this part of the text is to compare the various relationships between technologies of the converter in each work. On first sight it seem that in \cite{Pavlovsky2006} the emphasizes was laid upon the electrical design. In \cite{Popovic2005}, the emphasizes was laid on the second part of the diagram in Fig. \ref{fig:jelena2}. And in \cite{Gerber2005} the empahsizes was laid more on combination of the two, with defining more consistent relationships.  This small note will be important later, when comparing modular and integral approach for product design.
 
 
 
@@ -385,7 +396,7 @@ The last "dimension" describing the power electronic converter is application. A
 
 The dimensions defining the power electronic converter can be matched to create a space such as on Fig. \ref{fig:sapcevanwyk}. Compared to the power electronic space in Fig. \ref{fig:sapcevanwyk} one more dimension was briefly touched upon, that being the design process. The design process is hard to fit in such a figure, since it is very iterative, and too "unstable".
 
- Further, enlargment of the space as defined in \cite{VanWyk2013}, is in the functions. Based on functionalities authors define 3 types of converters - source converter, load converter and network converter. However, it might be worth a consideration to define also a special group of converters for electrical storage elements.
+ Further, enlargement of the space as defined in \cite{VanWyk2013}, is in the functions. Based on functionalities authors define 3 types of converters - source converter, load converter and network converter. However, it might be worth a consideration to define also a special group of converters for electrical storage elements.
  
  
 %% Research directions
@@ -393,7 +404,7 @@ The dimensions defining the power electronic converter can be matched to create 
 As the terms and space for the field was restricted, one can continue with describing future trends of power electronics. In \cite{Kolar2010} the power electronics as a research field is described as mature. In \cite{VanWyk2013} it is further elaborated that the maturity of the research field is mainly connected to the exhaustion of the internal drivers for research. While the reasoning in \cite{Kolar2010} and in \cite{Wyk2012} or \cite{Boroyevich2013} is not necessarily the same, the conclusions drawn have a common point: the research in power electronics will be mainly pulled by the applications. This is an interesting conclusion since it adds more diversity to already multidisciplinary field. 
 
 
-The previous two paragraphs illustrate a need for a more general approach when compiling a literature review of the state-of-the art in the power electronics. However, the scope of the power electronics is still too large to capture in a simple chapter. Therefore several selected topics will be reviewed which are directly connected to the research  on the power electronics in the future distribution of electrical energy. 
+%The previous two paragraphs illustrate a need for a more general approach when compiling a literature review of the state-of-the art in the power electronics. However, due to limited scope  Therefore several selected topics will be reviewed which are directly connected to the research  on the power electronics in the future distribution of electrical energy. 
 
 
 \subsection{Internal Drivers for research}
@@ -425,32 +436,9 @@ The previous two paragraphs illustrate a need for a more general approach when c
 	
 In manufacturing process anything that allows for cost-reduction is a clear winner. This attitude can be found in \cite{Ulrich2004}, that ideal is to reduce the complexity of the process  : ''\emph{...manufacturing system would utilize a single process to transform a single raw material into a single part ...}'' and as continues in \cite{Ulrich2004} ''\emph{Complexity arises from variety in the inputs, outputs, and transforming process}''.
 
-The general description of complexity of manufacturing process is certainly true for power electronics. In power electronics the trouble for the manufacturing process comes from the fact that the stages of design process, \ref{fig:jelena2} are usually interconnected. 
-	
-	I
-	
-	In \cite{Popovic2005} the traditional design of the converter is divided into several parts:
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.7\linewidth]{Pictures/Jelena1}
-		\caption{Conventional construction of power electronic converters}
-		\label{fig:jelena1}
-	\end{figure}
-	\newpage
-	In for example \cite{Abraham2005} the cornerstones of the packaging from the provided definition are: 
-	\begin{itemize}
-		\item electronic circuit
-		\item thermal circuit
-		\item electromagnetic design
-	\end{itemize}
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\linewidth]{Pictures/JelenaCombo}
-		\caption{Combinig cornerstones with the traditional design approach}
-		\label{fig:jelenacombo}
-	\end{figure}
-	
-	
+The general description of complexity of manufacturing process is certainly true for power electronics. In power electronics the trouble for the manufacturing process comes from the fact that the stages of design process, \ref{fig:jelena2} are usually interconnected. It is not idea, to provide current state-of-art in this section, rather hint that packaging still might have inertia as an internal drive for research in power electronics\cite{VanWyk2013}.
+
+The options besides studying modularity of converters and its effect on manufacturing process include minimizing of the $CO_2$ footprint over the lifetime of the converter. Further reduction in costs, increase in product variety and speeding up the product change.
 	\end{enumerate}
 	
 	
@@ -458,29 +446,10 @@ The general description of complexity of manufacturing process is certainly true
 
 	
 	
-
+%\newpage
 \subsection{External Drivers for research - Application}
-Functions: 
-\begin{itemize}
-	\item enables DC voltage stepping
-	\item DC power or DC voltage regulation
-	\item DC fault isolation
-	\item Interfacing different DC technologies like current source with voltage source DC or monopolar with bipolar DC systems.
-\end{itemize}
 
-Requirements:
-\begin{itemize}
-	\item Reduce stand-by losses and efficiency at partial load (very high overall efficiency)
-	\item Long useful life
-	\item high availability  - translates to redundancy of the converter
-	\item easy maintenance
-	\item Cheap,cheap and once again cheap
-	\item Environment friendly 
-\end{itemize}
-
-
-
-In the previous sections the low voltage DC distribution grid was described as well as a general introduction to power electronics. As was discussed it might be worth to enlarge the function dimension of power electronic converter space by electrical storage converter. Thus we effectively obtain four types of converter based on their function. In low voltage DC distribution all of them can be found with certain specifics and restrictions imposed by the application:
+In the previous sections the low voltage DC distribution grid was described as well as a general introduction to power electronics was given. As was discussed it might be worth to enlarge the function dimension of power electronic converter space by electrical storage converter. Thus we effectively obtain four types of converter based on their function. In low voltage DC distribution all of them can be found with certain specifics and restrictions imposed by the application:
 
 \begin{enumerate}
 	\item \textbf{Source Converter }- integrating the renewable resources, such as wind, fuel cells or PV. 
@@ -489,8 +458,8 @@ In the previous sections the low voltage DC distribution grid was described as w
 	\item \textbf{Network Converter} - Converters to connect to the utility grid and integrate the microgrid to the existing grid, or the converters connecting various parts of the DC network vertically. Network converter acts like transformer in AC grid, with some extra functionalities, such as power flow control.
 	
 	\end{enumerate}
-	\newpage
-	\subsection{Source Converter}
+%	\newpage
+	\subsubsection{Source Converter}
 	
 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -514,7 +483,8 @@ As is shown in Fig. \ref{fig:Costs} the PE comprises a significant part of the t
 	\item Research is not enough concentrated on the system package
 \end{itemize}
 
-\subsubsection{Photovoltaic systems and Fuel cells}
+\textbf{Photovoltaic systems and Fuel cells} \\
+
 The two basic concepts of connecting PV panels to the grid are:
 \begin{itemize}
 	\item 3-phase converter
@@ -525,7 +495,7 @@ The first concept is older and without the transformer. However, due to losses a
 The advantage of having a DC grid with PV panels comes from the fact, that the PV panels produce DC. Thus, we save one conversion step, and we do not have problems with grid synchronization, or reactive power balancing. 
 
 
-\subsubsection{Wind energy}
+\textbf{Wind energy} \\
 
 
 The modern system integrating the wind energy to the grid can be categorized to three main groups \cite{Technology2015}:
@@ -545,8 +515,8 @@ The main challenges in research of power electronics for integration of renewabl
 \end{itemize}
 
 
-
-\subsection{Energy Storage Converters}
+\newpage
+\subsubsection{Energy Storage Converters}
 
 All chemical batteries produce DC power, which leads to the use of PE interface in order to integrate them in the grid. Compared to the previous group of PE for integrating storage it is not necessary to apply some kind of peak power operation. However, these converters need to be bi-directional.
 
@@ -560,7 +530,7 @@ All chemical batteries produce DC power, which leads to the use of PE interface 
 The advantage of the system on fig. \ref{fig:Storage} is that it can step up or down the output voltage thanks to the HF transformer. But, it contains high number of elements.
 
 
-\subsection{Load Converters}
+\subsubsection{Load Converters}
 
 In the figure \ref{fig:nilsnano1} is a schematic structure of a DC nanogrid, which can be house. On the nanogrid level, we can find an example of the load converter in inductive heating.  In \cite{Lucia2013} a resonant converter for the inductive cooker was design as case study for the DC house. 
 
@@ -570,7 +540,7 @@ More interestingly in \cite{Lucia2013} a case study was done to compare the solu
 
  
 
-\subsection{Network Converters}
+\subsubsection{Network Converters}
 
 \begin{quotation}
 	``Like the left-handed monkey wrench, the concept of a dc transformer has always been something of an inside joke among engineers. However by utilizing superconductors a device has now been created in which a direct current actually can be transformed" \cite{Although}
@@ -627,7 +597,7 @@ The three main challenges for the SST in distribution are following\cite{Huang20
 
 The efficiency can be increased if the converters are achieving ZVS over large range of the load, since both dual-active bridge and half-bridge have ZVS switching only in  a limited range. To increase the ZVS region it is possible to include a third leg such in \cite{Baars2015}. Furthermore to improve the ZVS switching also the transformer ratio and configuration needs to be considered \cite{Baars2015b}.
 
-The transformer attracts quite some attention as is shown in \cite{Huang2013}. Not only the configuration of winding but also the structure are very important for the design. Based on the switching frequency the material should be selected. One of the possible demands might be to avoid the ferrite cores. Because these might be just too big due to their low saturation flux density. 
+The transformer attracts quite some attention as is shown in \cite{Huang2013}. Not only the configuration of winding but also the structure are very important for the design. Based on the switching frequency the material should be selected. In \cite{Hanson2016} it is shown that significant power density improvements can be expected for ferrite materials in the frequency range from 20 $kHz$ to 100 $kHz$. However, in the range from $100 kHz$ up to $2 MHz$, the gains in power density are  much smaller. There is light in the end of the tunnel, because from $2 MHz$ up to $10 MHz$ the standard performance factor of the ferrites rises abruptly again.
 
 From the point of view of the semiconductor technology used in these transformers an interesting and quite soundly argumented prediction was made in \cite{Huang2013},\cite{Rohm2014}:
 
@@ -639,12 +609,7 @@ From the point of view of the semiconductor technology used in these transformer
 
 
 
-As a part of the FREEDM project a company \emph{GridBridge} tried to create an SST. \href{<http://www.grid-bridge.com/products-2/>}{Product} which is now commercially available is not exactly an SST. It is a converter that helps with dynamic regulation of the voltage and reactive power near the feeder. Yet, the GridBridge receive a lot of attention both from industry and government. It is quite strange because there is similar product from a bigger company \href{<http://varentec.com/products/engo-v10/>}{Verantec}. This product seems to be important for the US market where the availability of the electrical power is low compared to Europe.
-
-
-
 In power distribution application the power density is not necessarily the ultimate design factor. However, it can happen that the price of the land is too high (eg. city) and then the power density becomes important. Furthermore, usually power density is an opposing force to improving efficiency \cite{Biela2009}. In \cite{Biela2009} it is shown for a phase-shift converter with current doubler that very small gains in efficiency can mean significant decrease in power density. 
-
 
 
 Main part of the converter which volume is being minimized is the inductor/transformer.The design of magnetics and their behaviour under different conditions is being studied quite extensively \cite{Su2011},\cite{Mu2014}. As was hinted before as it  happens that the semiconductor is not the limiting factor for switching frequency. Rather in the ferrite when flux density is high the hysteresis losses increase, if the switching frequency is high the eddy current losses rise. These two effects lead to increase in temperature, the temperature can rise dangerously close to Curie temperature and that poses a practical limitation for the design. The almost up-to-date research state is nicely captured in the dissertation \cite{Shen2006}. 
@@ -653,6 +618,8 @@ As is shown the research covered almost all areas of power and frequency ranges.
 
 
 An interesting analysis was carried out in \cite{Waffler2009}, were hard switched SiC device was compared with soft-switched Si device. While the efficiencies were comparable, the SiC was cost-wise much better (based on total chip area). However, the soft-switched was smaller and more flexible solution. This is perhaps an interesting implication, the soft-swtiched modules can be less cost-effective then utilization of non-modular device based on SiC, but the modular design has advantages like smaller size and more flexibility.
+
+As a part of the FREEDM project a company \emph{GridBridge} tried to create an SST. \href{<http://www.grid-bridge.com/products-2/>}{Product} which is now commercially available is not exactly an SST. It is a converter that helps with dynamic regulation of the voltage and reactive power near the feeder. Yet, the GridBridge receive a lot of attention both from industry and government. It is quite strange because there is similar product from a bigger company \href{<http://varentec.com/products/engo-v10/>}{Verantec}. This product seems to be important for the US market where the availability of the electrical power is low compared to Europe.
 
 \subsection{Vertical vs. Horizontal network converters}
 
@@ -897,10 +864,12 @@ An interesting source of inspiration is also the market for telecommunication po
 The companies operating on this market use modularity to achieve better spatial design of their converters. The idea is that they can better distribute the converters in space and thus save some space even though the power density is a bit smaller. As is noted the efficiency is of utmost importance due to the fact that the data centers consume up to 100 times more energy\footnote{Source: ABB blog ?} than the office building of the comparable size. 
 
 \newpage
+\newpage
+
 \section{Modular topology for LVDC}
 
 
-\subsubsection{Why Modularity makes sense in LVDC ?}
+\subsection{Why Modularity makes sense in LVDC ?}
 
 Generally there are two reasons to go for modular design from the point of view of industrial design or management\cite{Huang1998}:
 \begin{itemize}
@@ -1004,15 +973,7 @@ The basic cell is either full-bridge converter or half-bridge.
 \newpage
 \section{Conclusion}
 
-n \cite{Pavlovsky2006} a very high density DC-DC converter was designed, in the introduction a following figure is found to describe the three corner stones of the converter design:
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Pictures/Pavlovsky}
-	\caption{Three cornerstones of the converter design. \cite{Pavlovsky2006}}
-	\label{fig:pavlovsky}
-\end{figure}
-
-With regards to the current development and papers describing the future of PE such as \cite{VanWyk2013}, \cite{Kolar2014a},\cite{Boroyevich2015} I have changed the figure to the following: 
+In \cite{Pavlovsky2006} a very high density DC-DC converter was designed, in the introduction is a figure describing the cornerstones of the design of a DC-DC converter. These cornerstones were then matched with how the hurdles can be overcome. This representation can be seen in the top part of the Fig. \ref{fig:pavlovskyupdated}. With regards to the current development and papers describing the future of PE such as \cite{VanWyk2013}, \cite{Kolar2014a},\cite{Boroyevich2015} ,and so called change in paradigm of research in power electronics, the figure can be changed to the following: 
 
 \begin{figure}[h!]
 	\centering
@@ -1021,13 +982,15 @@ With regards to the current development and papers describing the future of PE s
 	\label{fig:pavlovskyupdated}
 \end{figure}
 
-\newpage
-Of course the figure is highly subjective and made to fit into the project description. Furthermore, the idea to connect converters in series or in parallel is everything but new. However, here the interleaving of converters is connected to the cornerstones of the converter design. 
 
-Reasoning behind \emph{reduction of size}, comes for example from \cite{Bahmani2016a}. Which is yet unpublished dissertation from Chalmers University. The author was designing a converter for a DC DC converter for high power. As he shows the size reduction is not possible with just frequency under certain point. The same conclusion was drawn for example in \cite{Fan2011} or in \cite{Yang2015a}. Furthermore as is concluded in \cite{Hanson2016} and \cite{Kyaw2015} there is no fundamental reason why further improvement of power density via minimizing the size of the transformer  or capacitor is not possible. However, the insulation materials are evolving slower and can pose a bigger bottleneck.
 
+Reasoning behind \emph{reduction of size}, comes for example from \cite{Bahmani2016a}. Which is yet unpublished dissertation from Chalmers University. The author was designing a converter for a DC DC converter for high power. As he shows the size reduction is not possible with just frequency under certain point. The same conclusion was drawn for example in \cite{Fan2011} or in \cite{Yang2015a}. However as is concluded in \cite{Hanson2016} and \cite{Kyaw2015} there is no fundamental reason why further improvement of power density via minimizing the size of the transformer  or capacitor is not possible. But, the insulation materials were not evaluated.
 
 The claim with reducing the switching losses with paralleling converters comes from \cite{Kolar2015a}. The modular design approach towards reducing thermal stress comes from the hand-outs of Packaging tutorial \cite{Faculty2014a}.
+
+What is an opportunity for research is thorough investigation of the principles of modularity in product design and manufacturing. And how these concepts can be used for the manufacturing of power electronics. As was shown the research in modular power electronics rarely goes behind the cascaded connection of the converters. 
+
+Furthermore, utilizing life-cycle analysis and minimizing the footprint of the converters can become a new direction in research as an answer the growing need for decarbonizing the economy. Studying manufacturing process and materials used and the effect they have on the embodied energy of the converter with modular design approach can prove as very strong argument for more power electronics in power distribution for secondary customers, regardless of AC vs DC discussion. 
 
 
 \newpage
